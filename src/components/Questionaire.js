@@ -3,24 +3,31 @@ import Que from '../que/Que'
 import Awnsers from './Awnsers'
 import '../styles/Questionaire.css'
 
+const q = new Que(0);
+
 export default class Questionaire extends Component {
     state = {
         started: true,
         stakeholder: 'Test',
+        currentQuestion: {}
     }
 
     stakeholderClicked = (stakeholder) => {
         console.log(stakeholder)
         this.setState({stakeholder: stakeholder, started: false})
-        this.props.setHeader(false);
+        this.props.setHeader(false)
+        this.getQuestion()
     }
 
-    getAwnsers = () => {
-        return [
-            {text: "Gute Laune", empfehlung: [], optional: "optionale beschreibung", next: [1]},
-            {text: "Singen", empfehlung: [], optional: "optionale beschreibung", next: [2]},
-            {text: "Tanzen", empfehlung: [], optional: "optionale beschreibung", next: [3]},
-        ]
+    setAnswer = (keys) => {
+        q.setAnswers(keys)
+        q.setNext()
+        this.getQuestion()
+    }
+
+    getQuestion = () => {
+        debugger
+        this.setState({currentQuestion: q.getQuestion()})
     }
     render() {
         if (this.state.started) {
@@ -48,10 +55,12 @@ export default class Questionaire extends Component {
 
         return (
             <div className="question">
-                <h2 className="title">Wie helfe ich mir selbst?</h2>
+                <h2 className="title">{this.state.currentQuestion.text}</h2>
                 <div className="questions">
-                    <Awnsers awnsers={this.getAwnsers()} type="1" />
+                    <Awnsers awnsers={this.state.currentQuestion.antworten} type={this.state.currentQuestion.type} setAnswer={this.setAnswer} />
                 </div>
+
+
             </div>
         )
         
