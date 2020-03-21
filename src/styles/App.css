@@ -7,13 +7,21 @@
     background-color: #b7b7b7;
     height: 170px;
     padding-left: 10%;
-    padding-top: 20px;
     margin: 0 auto;
     color: #f9f9f9;
+    opacity: 1;
+    transition: height ease-in-out 0.7s;
+}
+
+.headerInv {
+    height: 0;
+    margin: 0;
 }
 
 .header h1 {
-    display: inline;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .App img {
@@ -30,4 +38,30 @@ nav {
 .App {
     height: 100vh;
     background-color: white;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #dddddd;
+    border-bottom: 10px solid rgba(0,0,0,.32);
+}
+
+footer a {
+    color: #333;
+    font-size: 1.1em;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+a + a {
+    margin-left: 50px;
+}
+
+footer .footer-links {
+    width: 80%;
+    margin: 0 auto;
 }
