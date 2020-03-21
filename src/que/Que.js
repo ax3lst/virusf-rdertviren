@@ -1,48 +1,72 @@
 export default class Que {
+    CountRecommandations = 15;
+    Recommendations = new boolean[CountRecommendations];
+    for(var i in Recommandations) i = false;
+
     liste = [
         {
             text: "Wer bist du", 
             optional: "optionale Beschreibung",
+            type: 0,
+            show: true,
             next: 1,
             antworten: [
-                {text: "User", empfehlung: [], optional: "optionale beschreibung", next: [1]},
-                {text: "Manager", empfehlung: [], optional: "optionale beschreibung", next: [2]},
-                {text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: [3]},
+                {id: 0, text: "User", empfehlung: [], optional: "optionale beschreibung", next: [1]},
+                {id: 1, text: "Manager", empfehlung: [], optional: "optionale beschreibung", next: [2]},
+                {id: 2, text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: [3]}
             ]
         },
         {
             text: "Hey sysadmin", 
             optional: "optionale Beschreibung",
+            type: 1,
+            show: false,
             next: 4,
             antworten: [
-                {text: "User", empfehlung: [], optional: "optionale beschreibung", next: [4]},
-                {text: "Manager", empfehlung: [], optional: "optionale beschreibung", next: [4]},
-                {text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: [4]},
+                {id: 0, text: "User", empfehlung: [], optional: "optionale beschreibung", next: [4]},
+                {id: 1, text: "Manager", empfehlung: [], optional: "optionale beschreibung", next: [4]},
+                {id: 2, text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: [4]}
             ]
         }
     ]
     
-    current = [0]
+    currentQuestion = 0;
 
-    constructor(pos, data) {
+    constructor(pos) {
         this.currentQuestion = pos
-        this.buildDataStructure(data)
     }
 
     getQuestion = () => {
-        var q = this.liste[this.current]
+        this.current++;
+        while(this.liste[this.current] && !this.liste[this.current].show) {
+          this.current++;
+        }
+        return this.liste[this.current]
+    }
 
-        return {
-            text: q.text,
-            optional: q.optional
+    addQuestions = (quest) => {
+        for(var i in quest) { 
+            this.liste[i].show = true;
         }
     }
 
-    getAwnsers = () => {
-        return this.liste[this.current].antworten
+    addRecommendations = (recomm) => {
+        for(var i in recomm) {
+            this.Recommendation[i] = true;
+        }
     }
 
-    setAwnser = (index) => {
+    setAnswers = (answers) => {
+        if !(answers) {return}
+        curQuestion = this.liste[currentQuestion]
+        for (var i in answers) { 
+            additionalQuestions = curQuestion.antworten[i].next;
+            addQuestions(additionalQuestions);
+
+            newRecommendations = curQuestion.antworten[i].empfehlung;
+            addRecommendations(newRecommendations);
+        }
+        
         this.current = this.liste[this.current].antworten[index].next
     }
 }
