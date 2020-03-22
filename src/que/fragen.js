@@ -4,11 +4,13 @@ var liste = [
             text: "Wer bist denn du?", 
             optional: "",
             type: 1,
+            handle: [];
             antworten: [
                 {id: 0, text: "User", empfehlung: [], optional: "", next: [1]},
                 {id: 1, text: "Admin", empfehlung: [], optional: "", next: [29]},
                 {id: 2, text: "Manager", empfehlung: [], optional: "", next: [46]}
-            ]
+            ],
+            handlung: ""
         },
 {
             id: 1,
