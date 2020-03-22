@@ -1,14 +1,13 @@
 export default class Que {
+    const CountRecommendations = 15
     recommendations = []
     
-    /**
     constructor(pos) {
         for(var i = 0; i < CountRecommendations; i++)
             this.recommendations.push(false);
 
         this.currentQuestion = pos || 0
     }
-     */
 
     next = [0]
 
@@ -58,6 +57,9 @@ export default class Que {
         for (var i = 0; i < answers.length; i++) {
             if (answers[i] > currentAnswers.length)
                 return
+            
+            if (currentAnswers[answers[i]].empfehlung.legth !== 0) {
+            }
 
             if (currentAnswers[answers[i]].next.length !== 0) {
                 this.next.push(currentAnswers[answers[i]].next)
