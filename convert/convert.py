@@ -9,7 +9,7 @@ questions = []
 
 class Question:
 
-    def __init__ (self, index, pthema=None, ptype=None, frage=None, antwort=None, links=None, text=None, bsp=None, handle=None):
+    def __init__ (self, index=0, pthema=None, ptype=None, frage=None, antwort=None, links=None, text=None, bsp=None, handle=None):
         self.index = index
         self.thema = pthema
         self.type = ptype
@@ -58,9 +58,6 @@ class QType(Enum):
 lastthema = None
 rownr = 0
 with open(filename, newline='') as csvfile:
-    ind_user = 1
-    ind_admin = 1001
-    ind_manager = 2001
     reader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in reader:
         rownr += 1
@@ -75,7 +72,7 @@ with open(filename, newline='') as csvfile:
         #print (len(row))
 
         if len(row) > 9:
-            userq = Question(ind_user)
+            userq = Question()
             userq.thema = lastthema
             userq.type = QType.USER
             userq.frage = row[2]
@@ -90,7 +87,7 @@ with open(filename, newline='') as csvfile:
             userq.text = row[10]
             userq.text
             
-            adminq = Question(ind_admin)
+            adminq = Question()
             adminq.thema = lastthema
             adminq.type = QType.ADMIN
             adminq.frage = row[4]
@@ -104,16 +101,15 @@ with open(filename, newline='') as csvfile:
             adminq.bsp = row[8]
             adminq.text = row[10]
 
-            managerq = Question(ind_manager)
+            managerq = Question()
             managerq.thema = lastthema
-            managerq.index = ind_manager
             managerq.type = QType.MANAGER
             managerq.frage = row[6]
             need_handle = row[1]
             if(need_handle == "x"):
-                managerq.handle = "[0,2]"
-            else: 
                 managerq.handle = "[1,2]"
+            else: 
+                managerq.handle = "[0,2]"
             managerq.antwort = row[7]
             managerq.links  = row[9]
             managerq.bsp = row[8]
@@ -171,11 +167,13 @@ output = """liste = [
             text: "Wer bist denn du?", 
             optional: "",
             type: 1,
+            handle: [];
             antworten: [
                 {id: 0, text: "User", empfehlung: [], optional: "", next: [%d]},
                 {id: 1, text: "Admin", empfehlung: [], optional: "", next: [%d]},
                 {id: 2, text: "Manager", empfehlung: [], optional: "", next: [%d]}
-            ]
+            ],
+            handlung: ""
         },
 """ % (start_user, start_admin, start_manager)
 output += res[:-2]
