@@ -13,7 +13,8 @@ export default function Results(props) {
                         <h3>{el.text}</h3>
 
                         <div className="recommendation-optional">
-                            {el.optional}
+                            {el.optional}<br />
+                            {el.empfehlung}
                         </div>
 
                         <div className="recommendation-handlung">

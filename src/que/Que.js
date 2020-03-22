@@ -58,7 +58,7 @@ export default class Que {
         }
         if (handle.filter(value => answers.includes(value)).length !== 0) {
             var res = {
-                
+                    empfehlung: this.liste[this.current].antworten[2].empfehlung, //@Todo: richtig machen
                     text: this.liste[this.current].text,
                     optional: this.liste[this.current].optional,
                     handlung: this.liste[this.current].handlung
