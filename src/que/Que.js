@@ -7,15 +7,8 @@ export default class Que {
         for(var i in this.recommendations)
             i = false;
 
-        if (liste === "user") {
-            this.liste = a.ulist
-        }
-        if (liste === "manager") {
-            this.liste = a.mlist
-        }
-        if (liste === "admin") {
-            this.liste = a.alist
-        }
+        this.liste = a.liste
+
         this.currentQuestion = pos || 0
     }
 
@@ -69,7 +62,6 @@ export default class Que {
             if (answers[i] > currentAnswers.length)
                 return
 
-            // Falls es 
             if (currentAnswers[answers[i]].next.length !== 0) {
                 this.next.push(currentAnswers[answers[i]].next)
             }

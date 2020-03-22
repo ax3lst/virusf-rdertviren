@@ -1,55 +1,51 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 import '../styles/Awnser.css'
 
-export default function Awnsers(props) {
+export default class Awnsers extends Component {
 
-    var values = []
-
-    const checked = (event, idx) => {
-        if (props.type === 0) {
-            var exists = values.includes(idx)
-            if (exists) {
-                values = values.splice(idx, 1)
-            } else {
-                values.push(idx)
-            }
-        } else {
-            values = [idx]
-        }
+    state = {
+        values: []
     }
 
-    const send = (event) => {
-        if (values.length !== 0)
-            props.setAnswer(values)
+    checked = (event, idx) => {
+        this.setState({values: [idx]})
     }
 
-    return (
-        <div>
-            {props.awnsers.map((awnser, idx) => {
-                if (props.type === 0) {
-                    return (
-                        <div className="wrapper">
-                            <label key={idx} className="container-checkbox"> {awnser.text}
-                                <input type="checkbox" onChange={event =>checked(event, idx)}></input>
-                                <span className="checkmark-checkbox"></span> 
-                            </label>
-                        </div>
-                    )
-                } else {
-                    return (
-                        <div className="wrapper">
-                            <label key={idx} className="container-radio"> {awnser.text} <br />
-                                <input type="radio" name="radio" onChange={e => checked(e, idx)}></input>
-                                <span className="checkmark-radio"></span>
-                            </label>
-                        </div>
-                    )
-                }
-            })}
-            <div class="wrapper">
-                <button onClick={e => send(e)} className="further">Weiter</button>
+    send = (event) => {
+        if (this.state.values.length !== 0)
+            this.props.setAnswer(this.state.values)
+    }
+
+    render() {
+        return (
+            <div>
+                {this.props.awnsers.map((awnser, idx) => {
+                    if (this.state.type === 0) {
+                        return (
+                            <div className="wrapper">
+                                <label key={idx} className="container-checkbox"> {awnser.text}
+                                    <input type="checkbox" onClick={event => this.checked(event, idx)}></input>
+                                    <span className="checkmark-checkbox"></span> 
+                                </label>
+                            </div>
+                        )
+                    } else {
+                        return (
+                            <div className="wrapper">
+                                <label key={idx} className="container-radio"> {awnser.text} <br />
+                                    <input type="radio" name="asdfsgasg" checked={this.state.values.includes(idx)} onChange={e => this.checked(e, idx)}></input>
+                                    <span className="checkmark-radio"></span>
+                                </label>
+                            </div>
+                        )
+                    }
+                })}
+                <div className="wrapper">
+                    <button onClick={e => this.send(e)} className="further">Weiter</button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
+    
 }

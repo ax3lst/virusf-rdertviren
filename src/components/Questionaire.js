@@ -15,10 +15,22 @@ export default class Questionaire extends Component {
     q = new Que(0, "user")
 
     stakeholderClicked = (stakeholder) => {
-        console.log(stakeholder)
         this.setState({stakeholder: stakeholder, started: false})
         this.props.setHeader(false)
+
         this.getQuestion()
+
+        if (stakeholder.startsWith("Us")) {
+            this.setAnswer([0])
+        }
+
+        if (stakeholder.startsWith("Ma")) {
+            this.setAnswer([1])
+        }
+
+        if (stakeholder.startsWith("Ad")) {
+            this.setAnswer([2])
+        }
     }
 
     setAnswer = (keys) => {
@@ -58,7 +70,7 @@ export default class Questionaire extends Component {
             <div className="question">
                 <h2 className="title">{this.state.currentQuestion.text}</h2>
                 {(this.state.currentQuestion.optional.length !== 0) &&
-                    <div class="optional-q-desc">
+                    <div className="optional-q-desc">
                         {this.state.currentQuestion.optional}
                     </div>
                 }
@@ -67,7 +79,6 @@ export default class Questionaire extends Component {
                 </div>
 
             </div>
-        )
-        
+        )        
     }
 }
