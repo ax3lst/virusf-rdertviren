@@ -1,39 +1,35 @@
+import ulist from './fragen'
+import mlist from './fragen'
+import alist from './fragen'
+
 export default class Que {
     recommendations = new Array(15)
     
     constructor(pos) {
         for(var i in this.recommendations)
-            i = false;
+            i = false
 
         this.currentQuestion = pos || 0
     }
 
+    liste = []
+
     next = [0]
 
-    liste = [
-        {
-            text: "Eine Frage, bl bla bla", 
-            optional: "optionale Beschreibung",
-            type: 0,
-            antworten: [
-                {id: 0, text: "Eine Antwort", empfehlung: [], optional: "optionale beschreibung", next: [1]},
-                {id: 1, text: "Zweite Antwort", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 2, text: "dritte Antwort", empfehlung: [], optional: "optionale beschreibung", next: []}
-            ]
-        },
-        {
-            text: "Hey hey", 
-            optional: "optionale Beschreibung",
-            type: 1,
-            antworten: [
-                {id: 0, text: "Axel", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 1, text: "Rouven", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 2, text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: []}
-            ]
-        }
-    ]
-
     current = -1;
+
+    start = (idx) => {
+        console.log(ulist)
+        if (idx === 0) {
+            this.liste = ulist
+        }
+        if (idx === 1) {
+            this.liste = mlist
+        }
+        if (idx === 2) {
+            this.liste = alist
+        }
+    }
 
     getRecommendations = () => {
         return this.recommendations    

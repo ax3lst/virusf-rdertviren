@@ -31,7 +31,7 @@ export default function Awnsers(props) {
                     return (
                         <div className="wrapper">
                             <label key={idx} className="container-checkbox"> {awnser.text} <br /> 
-                                <span className="explanation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque commodi, officia, dolorem sequi consequuntur neque sunt recusandae dolore perspiciatis sint impedit iste similique! Eaque reprehenderit numquam veritatis mollitia odio aliquam.</span>
+                                <span className="explanation">{awnser.optional}</span>
                                 <input type="checkbox" onChange={event =>checked(event, idx)}></input>
                                 <span className="checkmark-checkbox"></span> 
                             </label>
@@ -41,7 +41,7 @@ export default function Awnsers(props) {
                     return (
                         <div className="wrapper">
                             <label key={idx} className="container-radio"> {awnser.text} <br />
-                                <span className="explanation">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque commodi, officia, dolorem sequi consequuntur neque sunt recusandae dolore perspiciatis sint impedit iste similique! Eaque reprehenderit numquam veritatis mollitia odio aliquam.</span>
+                                <span className="explanation">{awnser.optional}</span>
                                 <input type="radio" name="radio" onChange={e => checked(e, idx)}></input>
                                 <span className="checkmark-radio"></span> 
                             </label>

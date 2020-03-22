@@ -1,4 +1,4 @@
-ulist = [{
+var ulist = [{
             text: "Verwenden Sie kabellose Eingabgeräte?", 
             optional: "Kabellose Tastaturen und Mäuse können von Angreifern abgehört und manipuliert werden. Dadurch können sensible Daten mitgelesen werden oder schadhafte Befehle in das System eingegeben werden.",
             type: 1,
@@ -43,15 +43,9 @@ ulist = [{
             optional: "Veraltete Softwareversionen können Schwachstellen enthalten über die ein Angreifer in das System eindringen kann.",
             type: 1,
             antworten: [
-                {id: 0, text: "Ja", empfehlung: ["Windows 10
-Chrome
-Firefox
-Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []},
+                {id: 0, text: "Ja", empfehlung: ["Windows 10 Chrome Firefox Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
-                {id: 2, text: "Weiß ich nicht", empfehlung: ["Windows 10
-Chrome
-Firefox
-Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []}
+                {id: 2, text: "Weiß ich nicht", empfehlung: ["Windows 10 Chrome Firefox Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []}
             ]
         },
 {
@@ -189,13 +183,9 @@ Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Einr
             optional: "",
             type: 1,
             antworten: [
-                {id: 0, text: "Ja", empfehlung: ["Skype for Business
-Discord
-Zooom"], optional: "https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Reihe/ISi-VoIP/voip_node.html", next: []},
+                {id: 0, text: "Ja", empfehlung: ["Skype for Business Discord Zooom"], optional: "https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Reihe/ISi-VoIP/voip_node.html", next: []},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
-                {id: 2, text: "Weiß ich nicht", empfehlung: ["Skype for Business
-Discord
-Zooom"], optional: "https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Reihe/ISi-VoIP/voip_node.html", next: []}
+                {id: 2, text: "Weiß ich nicht", empfehlung: ["Skype for Business Discord Zooom"], optional: "https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Reihe/ISi-VoIP/voip_node.html", next: []}
             ]
         },
 {
@@ -287,8 +277,9 @@ Zooom"], optional: "https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Rei
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
                 {id: 2, text: "Weiß ich nicht", empfehlung: [""], optional: "", next: []}
             ]
-        }] 
-alist = [{
+        }]
+
+var alist = [{
             text: ".", 
             optional: "Unverschlüsselte Datenträger stellen bei Diebstahl oder Verlust ein hohes Risiko dar. Außerdem fordern einige Gesetze Verschlüsselung.",
             type: 1,
@@ -323,15 +314,9 @@ alist = [{
             optional: "Veraltete Softwareversionen können Schwachstellen enthalten über die ein Angreifer in das System eindringen kann.",
             type: 1,
             antworten: [
-                {id: 0, text: "Ja", empfehlung: ["Windows 10
-Chrome
-Firefox
-Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []},
+                {id: 0, text: "Ja", empfehlung: ["Windows 10 Chrome Firefox Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
-                {id: 2, text: "Weiß ich nicht", empfehlung: ["Windows 10
-Chrome
-Firefox
-Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []}
+                {id: 2, text: "Weiß ich nicht", empfehlung: ["Windows 10 Chrome Firefox Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []}
             ]
         },
 {
@@ -463,8 +448,9 @@ Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Einr
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
                 {id: 2, text: "Weiß ich nicht", empfehlung: [""], optional: "", next: []}
             ]
-        }] 
-mlist = [{
+        }]
+
+var mlist = [{
             text: "Verwenden Ihre Mitarbeiter kabellose Eingabgegeräte?", 
             optional: "Kabellose Tastaturen und Mäuse können von Angreifern abgehört und manipuliert werden. Dadurch können sensible Daten mitgelesen werden oder schadhafte Befehle in das System eingegeben werden.",
             type: 1,
@@ -509,15 +495,9 @@ mlist = [{
             optional: "Veraltete Softwareversionen können Schwachstellen enthalten über die ein Angreifer in das System eindringen kann.",
             type: 1,
             antworten: [
-                {id: 0, text: "Ja", empfehlung: ["Windows 10
-Chrome
-Firefox
-Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []},
+                {id: 0, text: "Ja", empfehlung: ["Windows 10 Chrome Firefox Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
-                {id: 2, text: "Weiß ich nicht", empfehlung: ["Windows 10
-Chrome
-Firefox
-Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []}
+                {id: 2, text: "Weiß ich nicht", empfehlung: ["Windows 10 Chrome Firefox Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html", next: []}
             ]
         },
 {
@@ -629,4 +609,11 @@ Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Einr
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
                 {id: 2, text: "Weiß ich nicht", empfehlung: [""], optional: "", next: []}
             ]
-        }] 
+        }
+]
+
+module.exports = {
+    alist,
+    mlist,
+    ulist
+}
