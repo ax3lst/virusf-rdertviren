@@ -8,8 +8,12 @@ export default function Awnsers(props) {
 
     const checked = (event, idx) => {
         if (props.type === 0) {
-            // @Todo: check if element is unchecked or not
-            values.push(idx)
+            var exists = values.includes(idx)
+            if (exists) {
+                values = values.splice(idx, 1)
+            } else {
+                values.push(idx)
+            }
         } else {
             values = [idx]
         }

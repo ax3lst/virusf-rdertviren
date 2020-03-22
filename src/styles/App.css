@@ -10,7 +10,7 @@
     margin: 0 auto;
     color: #f9f9f9;
     opacity: 1;
-    transition: height ease-in-out 0.5s, opacity ease-in-out 0.3s;
+    transition: height ease-in-out 0.5s, opacity ease-out 0.4s;
 }
 
 .headerInv {
