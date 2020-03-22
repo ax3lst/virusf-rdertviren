@@ -1,10 +1,9 @@
 export default class Que {
-    const CountRecommendations = 15
-    recommendations = []
+    recommendations = new Array(15)
     
     constructor(pos) {
-        for(var i = 0; i < CountRecommendations; i++)
-            this.recommendations.push(false);
+        for(var i in this.recommendations)
+            i = false;
 
         this.currentQuestion = pos || 0
     }
@@ -36,6 +35,10 @@ export default class Que {
 
     current = -1;
 
+    getRecommendations = () => {
+        
+    }
+
     setNext = () => {
         if (this.next.length === 0) {
             return
@@ -49,6 +52,12 @@ export default class Que {
         }
         return this.liste[this.current]
     }
+    
+    _setRecommendations = (rec) => {
+       for(var i = 0; i < rec.length; i++) {
+         this.recommendations[rec[i]] = true
+      } 
+    }
 
     setAnswers = (answers) => {
         var currentAnswers = this.liste[this.current].antworten
@@ -59,11 +68,15 @@ export default class Que {
                 return
             
             if (currentAnswers[answers[i]].empfehlung.legth !== 0) {
+
             }
 
+            // Falls es 
             if (currentAnswers[answers[i]].next.length !== 0) {
                 this.next.push(currentAnswers[answers[i]].next)
             }
+
+            this._setRecommendations(currentAnswers[answers[i]]) 
         }
     }
 }
