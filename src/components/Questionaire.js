@@ -9,8 +9,10 @@ export default class Questionaire extends Component {
     state = {
         started: true,
         stakeholder: 'Test',
-        currentQuestion: {}
+        currentQuestion: {},    
     }
+
+    q = new Que(0, "user")
 
     stakeholderClicked = (stakeholder) => {
         console.log(stakeholder)
@@ -55,6 +57,11 @@ export default class Questionaire extends Component {
         return (
             <div className="question">
                 <h2 className="title">{this.state.currentQuestion.text}</h2>
+                {(this.state.currentQuestion.optional.length !== 0) &&
+                    <div class="optional-q-desc">
+                        {this.state.currentQuestion.optional}
+                    </div>
+                }
                 <div className="questions">
                     <Awnsers awnsers={this.state.currentQuestion.antworten} type={this.state.currentQuestion.type} setAnswer={this.setAnswer} />
                 </div>

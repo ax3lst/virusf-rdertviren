@@ -3,9 +3,9 @@ ulist = [{
             optional: "Kabellose Tastaturen und Mäuse können von Angreifern abgehört und manipuliert werden. Dadurch können sensible Daten mitgelesen werden oder schadhafte Befehle in das System eingegeben werden.",
             type: 1,
             antworten: [
-                {id: 0, text: "Ja", empfehlung: [""], optional: "https://www.itk-security.de/funktastaturen-und-maeuse-sind-nicht-sicher-aus-die-maus/", next: []},
-                {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
-                {id: 2, text: "Weiß ich nicht", empfehlung: [""], optional: "https://www.itk-security.de/funktastaturen-und-maeuse-sind-nicht-sicher-aus-die-maus/", next: []}
+                {id: 0, text: "Ja", empfehlung: [""], optional: "https://www.itk-security.de/funktastaturen-und-maeuse-sind-nicht-sicher-aus-die-maus/", next: [1]},
+                {id: 1, text: "Nein", empfehlung: [], optional: "", next: [1]},
+                {id: 2, text: "Weiß ich nicht", empfehlung: [""], optional: "https://www.itk-security.de/funktastaturen-und-maeuse-sind-nicht-sicher-aus-die-maus/", next: [1]}
             ]
         },
 {
@@ -629,4 +629,11 @@ Outlook"], optional: "https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Einr
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
                 {id: 2, text: "Weiß ich nicht", empfehlung: [""], optional: "", next: []}
             ]
-        }] 
+        }
+]
+
+module.exports =  {
+    alist,
+    mlist,
+    ulist
+}

@@ -1,39 +1,39 @@
+var a = require('./fragen')
+
 export default class Que {
     recommendations = new Array(15)
     
-    constructor(pos) {
+    constructor(pos, liste) {
         for(var i in this.recommendations)
             i = false;
 
+        if (liste === "user") {
+            this.liste = a.ulist
+        }
+        if (liste === "manager") {
+            this.liste = a.mlist
+        }
+        if (liste === "admin") {
+            this.liste = a.alist
+        }
         this.currentQuestion = pos || 0
     }
 
     next = [0]
 
-    liste = [
-        {
-            text: "Eine Frage, bl bla bla", 
-            optional: "optionale Beschreibung",
-            type: 0,
-            antworten: [
-                {id: 0, text: "Eine Antwort", empfehlung: [], optional: "optionale beschreibung", next: [1]},
-                {id: 1, text: "Zweite Antwort", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 2, text: "dritte Antwort", empfehlung: [], optional: "optionale beschreibung", next: []}
-            ]
-        },
-        {
-            text: "Hey hey", 
-            optional: "optionale Beschreibung",
-            type: 1,
-            antworten: [
-                {id: 0, text: "Axel", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 1, text: "Rouven", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 2, text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: []}
-            ]
-        }
-    ]
-
     current = -1;
+
+    start = (idx) => {
+        if (idx === 0) {
+            this.liste = a.ulist
+        }
+        if (idx === 1) {
+            this.liste = a.mlist
+        }
+        if (idx === 2) {
+            this.liste = a.alist
+        }
+    }
 
     getRecommendations = () => {
         return this.recommendations    
