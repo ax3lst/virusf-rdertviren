@@ -4,13 +4,11 @@ liste = [
             text: "Wer bist denn du?", 
             optional: "",
             type: 1,
-            handle: [],
             antworten: [
                 {id: 0, text: "User", empfehlung: [], optional: "", next: [1]},
                 {id: 1, text: "Admin", empfehlung: [], optional: "", next: [29]},
                 {id: 2, text: "Manager", empfehlung: [], optional: "", next: [46]}
-            ],
-            handlung: ""
+            ]
         },
 {
             id: 1,
@@ -602,7 +600,7 @@ liste = [
             text: "Verwenden Ihre Mitarbeiter kabellose Eingabgegeräte?", 
             optional: "Kabellose Tastaturen und Mäuse können von Angreifern abgehört und manipuliert werden. Dadurch können sensible Daten mitgelesen werden oder schadhafte Befehle in das System eingegeben werden.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.itk-security.de/funktastaturen-und-maeuse-sind-nicht-sicher-aus-die-maus/"], optional: "", next: [47]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [47]},
@@ -615,7 +613,7 @@ liste = [
             text: "Müssen ihre Mitarbeiter Daten auf externen Datenträgern speichern?", 
             optional: "Unverschlüsselte Datenträger stellen bei Diebstahl oder Verlust ein hohes Risiko dar. Außerdem fordern einige Gesetze Verschlüsselung.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.it-techblog.de/darum-ist-eine-gute-verschluesselung-wichtig/12/2017/"], optional: "Bitlocker, Veracrypt, Androidsystemverschlüsselung, ", next: [48]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "Bitlocker, Veracrypt, Androidsystemverschlüsselung, ", next: [48]},
@@ -628,7 +626,7 @@ liste = [
             text: "Können die Mitarbeiter private Geräte anschließen?", 
             optional: "Eigene Geräte können maliziöse Aktionen auf dem System ausführen.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: [""], optional: "", next: [49]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [49]},
@@ -641,7 +639,7 @@ liste = [
             text: "Sind die Arbeitsgeräte verschlüsselt?", 
             optional: "Unverschlüsselte Datenträger stellen bei Diebstahl oder Verlust ein hohes Risiko dar. Außerdem fordern einige Gesetze Verschlüsselung.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://support.microsoft.com/de-de/help/4028713/windows-10-turn-on-device-encryption"], optional: "Bitlocker, Veracrypt, Androidsystemverschlüsselung, ", next: [50]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "Bitlocker, Veracrypt, Androidsystemverschlüsselung, ", next: [50]},
@@ -654,7 +652,7 @@ liste = [
             text: "Verwenden Ihre Mitarbeiter die aktuellsten Softwareversionen?", 
             optional: "Veraltete Softwareversionen können Schwachstellen enthalten über die ein Angreifer in das System eindringen kann.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/EinrichtungSoftware/UpdatePatchManagement/LeitfadenUpdatemanagement/leitfadenUpdateManagement_node.html"], optional: "Windows 10<br \>Chrome<br \>Firefox<br \>Outlook", next: [51]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "Windows 10<br \>Chrome<br \>Firefox<br \>Outlook", next: [51]},
@@ -667,7 +665,7 @@ liste = [
             text: "Kann der Bildschirm ihrer Mitarbeiter von anderen unberechtigt eingesehen werden?", 
             optional: "Ein Angreifer könnte schützenswerte Informationen ausspähen.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.haufe.de/compliance/management-praxis/datenschutz-bei-notebooks-durch-blickschutzfilter_230130_278940.html"], optional: "", next: [52]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [52]},
@@ -680,7 +678,7 @@ liste = [
             text: "Lagern Sie zuhause schützenswerte Informationen/Gegenstände?", 
             optional: "Unverschlüsselte Informationen können durch einen Einbruch verloren gehen.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.ndr.de/ratgeber/verbraucher/Einbruchschutz-So-werden-Haus-und-Wohnung-sicherer,einbruchschutz130.html"], optional: "", next: [53]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [53]},
@@ -693,7 +691,7 @@ liste = [
             text: "Setzen Sie Antivirussoftware ein?", 
             optional: "",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Schutzprogramme/Virenschutzprogramme/virenschutzprogramme_node.html"], optional: "", next: [54]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [54]},
@@ -706,7 +704,7 @@ liste = [
             text: "Müssen Ihre Mitarbeiter auf Dateien aus dem Firmennetzwerk zugreifen?", 
             optional: "Ein VPN Tunnel bieter sicheren Zugriff auf das Firmennetzwerk.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.bsi.bund.de/DE/Themen/StandardsKriterien/ISi-Reihe/ISi-VPN/vpn_node.html"], optional: "OpenVPN, Wireguard", next: [55]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "OpenVPN, Wireguard", next: [55]},
@@ -719,7 +717,7 @@ liste = [
             text: "Müssen Ihre Mitarbeiter Dateien undeinerander austauschen?", 
             optional: "Durch einen selbstbetriebenen Cloudspeicher behält man die Kontrolle wo die Daten gespeichert werden.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_Mitnutzung_externer_Cloud-Dienste.pdf?__blob=publicationFile&v=8"], optional: "Nextcloud, Protonmail", next: [56]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "Nextcloud, Protonmail", next: [56]},
@@ -732,7 +730,7 @@ liste = [
             text: "Müssen Ihre Mitarbeiter E-Mails verschicken?", 
             optional: "E-Mails sind standardmäßig unverschlüsselt und daher kein sicheres Kommunikationsmittel.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: ["https://www.bsi-fuer-buerger.de/BSIFB/DE/Empfehlungen/Verschluesselung/EMail_Verschluesselung/email_verschluesselung_node.html"], optional: "Protonmail", next: [57]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "Protonmail", next: [57]},
@@ -745,7 +743,7 @@ liste = [
             text: "Müssen Ihre Mitarbeiter kolloborativ arbeiten?", 
             optional: "Es gibt spezielle Onlinedienste, die sich auf gemeinsames Arbeiten spezialisiert haben.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: [""], optional: "GoogleDocs, NextCloud", next: [58]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "GoogleDocs, NextCloud", next: [58]},
@@ -758,7 +756,7 @@ liste = [
             text: "Gibt es für Ihr Unternehmen Multifaktorauthentifizierung?", 
             optional: "Mulitfaktorauthentifizierung erhöht die Sicherheit, falls ein Authentifizierungsmerkmal eines Mitarbeiters komprommitiert wurde.",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: [""], optional: "", next: [59]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [59]},
@@ -771,7 +769,7 @@ liste = [
             text: "Gibt es Nutzer, die zu hohe Privilegien besitzen?", 
             optional: "Zu Hohe Rechte erhöhen das Risko von Missbrauch bzw. des Schadenpotentials",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: [""], optional: "", next: [60]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [60]},
@@ -784,7 +782,7 @@ liste = [
             text: "Tauschen Sie sich oft über aktuelle Sicherheitsstandards mit Ihren Mitarbeitern aus? ", 
             optional: "",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: [""], optional: "", next: [61]},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: [61]},
@@ -797,7 +795,7 @@ liste = [
             text: "Verwenden Ihre Mitarbeiter eine Firewall?", 
             optional: "",
             type: 1,
-            handle: [1,2],
+            handle: [0,2],
             antworten: [
                 {id: 0, text: "Ja", empfehlung: [""], optional: "", next: []},
                 {id: 1, text: "Nein", empfehlung: [], optional: "", next: []},
