@@ -36,7 +36,7 @@ export default class Que {
     current = -1;
 
     getRecommendations = () => {
-        
+        return this.recommendations    
     }
 
     setNext = () => {
@@ -54,9 +54,11 @@ export default class Que {
     }
     
     _setRecommendations = (rec) => {
-       for(var i = 0; i < rec.length; i++) {
-         this.recommendations[rec[i]] = true
-      } 
+        if (!rec) return
+
+        for(var i = 0; i < rec.length; i++) {
+            this.recommendations[rec[i]] = true
+        }
     }
 
     setAnswers = (answers) => {
@@ -66,17 +68,13 @@ export default class Que {
         for (var i = 0; i < answers.length; i++) {
             if (answers[i] > currentAnswers.length)
                 return
-            
-            if (currentAnswers[answers[i]].empfehlung.legth !== 0) {
-
-            }
 
             // Falls es 
             if (currentAnswers[answers[i]].next.length !== 0) {
                 this.next.push(currentAnswers[answers[i]].next)
             }
 
-            this._setRecommendations(currentAnswers[answers[i]]) 
+            this._setRecommendations(currentAnswers[answers[i]].empfehlung) 
         }
     }
 }
