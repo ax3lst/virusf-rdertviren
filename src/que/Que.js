@@ -1,12 +1,10 @@
 var a = require('./fragen')
 
 export default class Que {
-    recommendations = new Array(15)
+    recommendations = []
+    
     
     constructor(pos, liste) {
-        for(var i in this.recommendations)
-            i = false;
-
         this.liste = a.liste
 
         this.currentQuestion = pos || 0
@@ -28,15 +26,13 @@ export default class Que {
         }
     }
 
-    getRecommendations = () => {
-        return this.recommendations    
-    }
-
     setNext = () => {
         if (this.next.length === 0) {
-            return
+            return false
         }
         this.current = this.next.pop()
+
+        return true
     }
 
     getQuestion = () => {
@@ -46,15 +42,8 @@ export default class Que {
         return this.liste[this.current]
     }
     
-    _setRecommendations = (rec) => {
-        if (!rec) return
-
-        for(var i = 0; i < rec.length; i++) {
-            this.recommendations[rec[i]] = true
-        }
-    }
-
     setAnswers = (answers) => {
+        var handle = this.liste[this.current].handle
         var currentAnswers = this.liste[this.current].antworten
 
         //sanity check
@@ -66,7 +55,19 @@ export default class Que {
                 this.next.push(currentAnswers[answers[i]].next)
             }
 
-            this._setRecommendations(currentAnswers[answers[i]].empfehlung) 
         }
+        if (handle.filter(value => answers.includes(value)).length !== 0) {
+            var res = {
+                
+                    text: this.liste[this.current].text,
+                    optional: this.liste[this.current].optional,
+                    handlung: this.liste[this.current].handlung
+            }
+            this.recommendations.push(res)
+        }
+    }
+
+    getRecommendations() {
+        return this.recommendations
     }
 }

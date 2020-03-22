@@ -9,7 +9,7 @@ const q = new Que(0);
 export default class Questionaire extends Component {
     state = {
         started: true,
-        finished: true,
+        finished: false,
         stakeholder: 'Test',
         currentQuestion: {},    
     }
@@ -37,13 +37,20 @@ export default class Questionaire extends Component {
 
     setAnswer = (keys) => {
         q.setAnswers(keys)
-        q.setNext()
+        if (!q.setNext()) {
+            this.setState({finished: true})
+        }
         this.getQuestion()
     }
 
     getQuestion = () => {
         this.setState({currentQuestion: q.getQuestion()})
     }
+
+    getRecommendations = () => {
+        return q.getRecommendations()
+    }
+
     render() {
         if (this.state.started) {
             return (
@@ -69,7 +76,7 @@ export default class Questionaire extends Component {
         }
 
         if (this.state.finished) {
-            return <Results />
+            return <Results data={this.getRecommendations()} />
         }
 
         return (
