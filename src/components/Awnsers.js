@@ -24,7 +24,7 @@ export default class Awnsers extends Component {
                     if (this.state.type === 0) {
                         return (
                             <div className="wrapper">
-                                <label key={idx} className="container-checkbox"> {awnser.text}
+                                <label key={idx} className="container-checkbox">{awnser.text}
                                     <input type="checkbox" onClick={event => this.checked(event, idx)}></input>
                                     <span className="checkmark-checkbox"></span> 
                                 </label>
@@ -33,10 +33,11 @@ export default class Awnsers extends Component {
                     } else {
                         return (
                             <div className="wrapper">
-                                <label key={idx} className="container-radio"> {awnser.text} <br />
+                                <label key={idx} className="container-radio">{awnser.text} <br />
                                     <input type="radio" name="asdfsgasg" checked={this.state.values.includes(idx)} onChange={e => this.checked(e, idx)}></input>
                                     <span className="checkmark-radio"></span>
                                 </label>
+                                <span className="explanation" dangerouslySetInnerHTML={{__html: awnser.optional}} ></span>
                             </div>
                         )
                     }

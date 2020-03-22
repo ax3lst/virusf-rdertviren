@@ -1,0 +1,35 @@
+.recommendations {
+    margin-bottom: 70px;
+}
+
+.recommendation-optional {
+    color: #352e2edc;
+    font-size: 0.9em;
+}
+
+.recommendations-header {
+    padding: 20px 20%;
+    margin: 0;
+    background-color: rgb(254, 206, 0);
+    margin-bottom: 10px;
+}
+
+.recommendation {
+    width: 60%;
+    margin: 0 auto;
+    border: 1px solid #352e2e1f;
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+}
+
+.recommendation h3 {
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+.recommendation-handlung {
+    font-size: 1.3em;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Que from '../que/Que'
 import Awnsers from './Awnsers'
+import Results from './Results'
 import '../styles/Questionaire.css'
 
 const q = new Que(0);
@@ -8,6 +9,7 @@ const q = new Que(0);
 export default class Questionaire extends Component {
     state = {
         started: true,
+        finished: true,
         stakeholder: 'Test',
         currentQuestion: {},    
     }
@@ -66,6 +68,10 @@ export default class Questionaire extends Component {
             )
         }
 
+        if (this.state.finished) {
+            return <Results />
+        }
+
         return (
             <div className="question">
                 <h2 className="title">{this.state.currentQuestion.text}</h2>
@@ -79,6 +85,6 @@ export default class Questionaire extends Component {
                 </div>
 
             </div>
-        )        
+        )
     }
 }

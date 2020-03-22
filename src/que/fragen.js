@@ -12,8 +12,9 @@ var liste = [
             },
     {
                 id: 1,
-                text: "Verwenden Sie kabellose Eingabgeräte?", 
+                text: "Verwenden Sie kabellose Eingabgeräte?",
                 optional: "Kabellose Tastaturen und Mäuse können von Angreifern abgehört und manipuliert werden. Dadurch können sensible Daten mitgelesen werden oder schadhafte Befehle in das System eingegeben werden.",
+                handlungsEmpfehlung: "handle",
                 type: 1,
                 antworten: [
                     {id: 0, text: "Ja", empfehlung: ["https://www.itk-security.de/funktastaturen-und-maeuse-sind-nicht-sicher-aus-die-maus/"], optional: "", next: [2]},
