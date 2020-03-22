@@ -14,17 +14,17 @@ export default class Que {
 
     liste = [
         {
-            text: "Wer bist du", 
+            text: "Eine Frage, bl bla bla", 
             optional: "optionale Beschreibung",
             type: 0,
             antworten: [
-                {id: 0, text: "User", empfehlung: [], optional: "optionale beschreibung", next: [1]},
-                {id: 1, text: "Manager", empfehlung: [], optional: "optionale beschreibung", next: []},
-                {id: 2, text: "Admin", empfehlung: [], optional: "optionale beschreibung", next: []}
+                {id: 0, text: "Eine Antwort", empfehlung: [], optional: "optionale beschreibung", next: [1]},
+                {id: 1, text: "Zweite Antwort", empfehlung: [], optional: "optionale beschreibung", next: []},
+                {id: 2, text: "dritte Antwort", empfehlung: [], optional: "optionale beschreibung", next: []}
             ]
         },
         {
-            text: "Hey sysadmin", 
+            text: "Hey hey", 
             optional: "optionale Beschreibung",
             type: 1,
             antworten: [

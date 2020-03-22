@@ -26,7 +26,6 @@ export default class Questionaire extends Component {
     }
 
     getQuestion = () => {
-        debugger
         this.setState({currentQuestion: q.getQuestion()})
     }
     render() {
@@ -59,7 +58,6 @@ export default class Questionaire extends Component {
                 <div className="questions">
                     <Awnsers awnsers={this.state.currentQuestion.antworten} type={this.state.currentQuestion.type} setAnswer={this.setAnswer} />
                 </div>
-
 
             </div>
         )

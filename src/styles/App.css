@@ -10,12 +10,12 @@
     margin: 0 auto;
     color: #f9f9f9;
     opacity: 1;
-    transition: height ease-in-out 0.7s;
+    transition: height ease-in-out 0.5s, opacity ease-in-out 0.3s;
 }
 
 .headerInv {
     height: 0;
-    margin: 0;
+    opacity: 0;
 }
 
 .header h1 {
@@ -45,7 +45,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0;
     background-color: #dddddd;
     border-bottom: 10px solid rgba(0,0,0,.32);
 }
